@@ -1,2 +1,49 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+
+<h1>Read the following words out loud</h1>
+
+<ul id="words">
+
+</ul>
+
+
+<script>
+
+	var wordList = document.querySelector('#words');
+
+	fetch('/magic-words', {credentials : 'include'})
+		.then(function(res){
+			if(res.ok){
+				return res.json()
+			} else {
+				throw res;
+			}
+		})
+		.then(function(data){
+
+			if(data.words !== undefined){
+
+				var frag = document.createDocumentFragment();
+
+				data.words.forEach(function(word){
+
+					var wordContainer = document.createElement('li');
+					wordContainer.textContent = word;
+
+					frag.appendChild(wordContainer);
+
+				});
+				
+				wordList.innerHTML = '';
+				wordList.appendChild(frag);
+			
+			} else {
+				throw 'Did not receive words from server';
+			}
+
+		})
+		.catch(function(err	){
+			console.log('Fetch error', err);
+		})
+	;
+
+</script>

@@ -1,8 +1,30 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+	padding: 50px;
+	font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+	background: #fff1e5;
 }
 
 a {
-  color: #00B7FF;
+	color: #00B7FF;
+}
+
+ul {
+	padding: 0;
+	margin: 0;
+}
+
+ul li {
+	list-style-type: none;
+    margin: 0;
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 1em;
+    background: #00757F;
+    border-radius: 3px;
+    padding: 0.5em 0;
+    color: white;
+    max-width: 400px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
 }
